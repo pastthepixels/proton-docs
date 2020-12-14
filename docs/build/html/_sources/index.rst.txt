@@ -1,10 +1,10 @@
 .. Proton documentation master file, created by
-   sphinx-quickstart on Sat Dec 12 12:21:40 2020.
+   sphinx-quickstart on Sun Dec 13 20:08:20 2020.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
 Welcome to Proton's documentation!
-================================================
+==================================
 
 .. toctree::
    :maxdepth: 2
