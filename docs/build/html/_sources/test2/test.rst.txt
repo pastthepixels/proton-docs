@@ -1,0 +1,5 @@
+.. _getting_started_test3:
+
+Test 3!
+=======
+The third test!

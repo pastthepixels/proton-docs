@@ -1,0 +1,9 @@
+Sample pages, set 2
+===================
+
+.. toctree::
+   :maxdepth: 1
+   :name: sample-pages-toc-2
+
+   test
+   test2

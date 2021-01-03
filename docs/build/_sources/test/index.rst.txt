@@ -1,0 +1,9 @@
+Sample pages
+============
+
+.. toctree::
+   :maxdepth: 1
+   :name: getting-started-toc
+
+   test
+   test2
