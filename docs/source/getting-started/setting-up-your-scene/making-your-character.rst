@@ -33,3 +33,15 @@ Now all you need to do is export this the same way you did for the base, name it
 Intermediate Character
 ======================
 
+If you want something other than a cube as your playermodel, consider watching this video where I mess around a bit to make something different.
+Remember to export your playermodel the same way as you would've done above!
+
+.. raw:: html
+
+    <video width="400" height="225" controls>
+        <source src="../../_static/intermediate-character.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+
+Finally, it's time to import your playermodels and test out your game! Head over to the next steps to find out what to do now.

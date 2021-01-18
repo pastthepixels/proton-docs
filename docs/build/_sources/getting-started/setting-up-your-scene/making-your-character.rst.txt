@@ -29,3 +29,13 @@ What this just did is unwrap the faces of your object so that the textures don't
 Note that the brick texture is just used as an example for a texture. You can go to the "UV Editing" to see what your mesh unwrapping looks like.
 
 Now all you need to do is export this the same way you did for the base, name it "player.glb", and you're done!
+
+Intermediate Character
+======================
+
+.. raw:: html
+
+    <video width="400" height="225" controls>
+        <source src="../../_static/intermediate-character.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
