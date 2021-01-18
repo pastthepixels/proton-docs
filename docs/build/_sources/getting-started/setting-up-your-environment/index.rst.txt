@@ -1,5 +1,6 @@
-Setting Up Your Environment
-===========================
+=========================================
+Setting Up Your (Development) Environment
+=========================================
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
