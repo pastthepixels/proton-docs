@@ -3,7 +3,7 @@ Making Your Character
 =====================
 
 Next, we get to decide what our player'll look like. Of course, they'll never see what they look like, but it's always fun to give your game a voice.
-You know, like the player model in Half-Life 2.
+You know, like the playermodel in Half-Life 2.
 
 Basic Character
 ===============
@@ -26,7 +26,7 @@ What this just did is unwrap the faces of your object so that the textures don't
 
 .. image:: images_player/texture_coordinate.png
 
-Note that the brick texture is just used as an example for a texture. You can go to the "UV Editing" to see what your mesh unwrapping looks like.
+Note that the brick texture is just used as an example for a texture. You can go to the "UV Editing" tab to see what your mesh unwrapping looks like.
 
 Now all you need to do is export this the same way you did for the base, name it "player.glb", and you're done!
 
@@ -44,4 +44,4 @@ Remember to export your playermodel the same way as you would've done above!
     </video>
 
 
-Finally, it's time to import your playermodels and test out your game! Head over to the next steps to find out what to do now.
+Finally, it's time to import your models and test out your game! Head over to the next steps to find out what to do now.
