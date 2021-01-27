@@ -97,6 +97,14 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../testing-your-game.html">Testing Your Game</a></li>
 </ul>
+<p class="caption"><span class="caption-text">API Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api-docs/index.html">Proton API Documentation Homepage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api-docs/proton3dmaterial.html">Proton3DMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api-docs/proton3dinterpreter.html">Proton3DInterpreter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api-docs/proton3dobject.html">Proton3DObject</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api-docs/proton3dscene.html">Proton3DScene</a></li>
+</ul>
 
             
           
@@ -167,6 +175,31 @@
             
   <div class="section" id="importing-your-scene">
 <h1>Importing Your Scene<a class="headerlink" href="#importing-your-scene" title="Permalink to this headline">¶</a></h1>
+<p>Now we’re going to import the scene. It should only take a few lines of code, pasted inside your GameCode constructor:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// The environment</span>
+<span class="nb">window</span><span class="p">[</span> <span class="s2">&quot;environment&quot;</span> <span class="p">]</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Proton</span><span class="p">.</span><span class="kr">import</span><span class="p">(</span> <span class="p">{</span>
+    <span class="nx">path</span><span class="o">:</span> <span class="s2">&quot;models/base.glb&quot;</span><span class="p">,</span>
+    <span class="nx">mass</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span> <span class="c1">// A mass of zero is needed to make static objects.</span>
+    <span class="nx">position</span><span class="o">:</span> <span class="k">new</span> <span class="nx">Proton</span><span class="p">.</span><span class="nx">Vector3</span><span class="p">(</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span> <span class="p">)</span>
+<span class="p">}</span> <span class="p">);</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We’re using window[ “environment” ] instead of the var keyword to make the variable “environment” global. This means you can play with it from the JavaScript
+console in the developer options panel.</p>
+</div>
+<p>This function, “Proton.import”, has some parameters important to us:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">importedMesh</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Proton</span><span class="p">.</span><span class="kr">import</span><span class="p">(</span> <span class="p">{</span> <span class="c1">// It&#39;s important to have that &quot;new&quot; keyword</span>
+    <span class="nx">path</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="c1">// A string consisting of the URL of your models</span>
+    <span class="nx">mass</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span> <span class="c1">// The mass of your object (zero to make it static)</span>
+    <span class="nx">position</span><span class="o">:</span> <span class="k">new</span> <span class="nx">Proton</span><span class="p">.</span><span class="nx">Vector3</span><span class="p">(</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span> <span class="p">)</span> <span class="c1">// The position of your object when it loads (Note that OpenGL/WebGL has a thing called Y-up)</span>
+    <span class="nx">physicsImpostor</span><span class="o">:</span> <span class="s2">&quot;MeshImpostor&quot;</span> <span class="c1">// A string consisting of the constructor used to make the physics mesh in Babylon.js (this can change the physics mesh&#39;s shape) (OPTIONAL)</span>
+    <span class="nx">onReady</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span> <span class="k">this</span> <span class="p">)</span> <span class="p">}</span> <span class="c1">// A function called when the object has loaded (OPTIONAL)</span>
+<span class="p">}</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>Great! Now we’re going to just have to import the playermodel. Head over to the next step to do that.</p>
 </div>
 
 

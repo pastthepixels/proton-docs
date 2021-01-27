@@ -97,6 +97,14 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../testing-your-game.html">Testing Your Game</a></li>
 </ul>
+<p class="caption"><span class="caption-text">API Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api-docs/index.html">Proton API Documentation Homepage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api-docs/proton3dmaterial.html">Proton3DMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api-docs/proton3dinterpreter.html">Proton3DInterpreter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api-docs/proton3dobject.html">Proton3DObject</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api-docs/proton3dscene.html">Proton3DScene</a></li>
+</ul>
 
             
           
@@ -167,6 +175,50 @@
             
   <div class="section" id="importing-your-character">
 <h1>Importing Your Character<a class="headerlink" href="#importing-your-character" title="Permalink to this headline">¶</a></h1>
+<p>This is the final step!
+Again, we’re going to paste this code right below where we had the environment imported, and I’ll explain what it does after.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// The player</span>
+<span class="nb">window</span><span class="p">[</span> <span class="s2">&quot;player&quot;</span> <span class="p">]</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Proton</span><span class="p">.</span><span class="kr">import</span><span class="p">(</span> <span class="p">{</span>
+    <span class="nx">path</span><span class="o">:</span> <span class="s2">&quot;models/player.glb&quot;</span><span class="p">,</span>
+    <span class="nx">mass</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nx">noPhysics</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nx">noShadows</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nx">position</span><span class="o">:</span> <span class="k">new</span> <span class="nx">Proton</span><span class="p">.</span><span class="nx">Vector3</span><span class="p">(</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">0</span> <span class="p">),</span>
+    <span class="nx">onReady</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+
+        <span class="nx">player</span><span class="p">.</span><span class="nx">objects</span><span class="p">[</span> <span class="mi">0</span> <span class="p">].</span><span class="nx">makePlayer</span><span class="p">(</span> <span class="p">{</span>
+            <span class="c1">// camera</span>
+            <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;firstperson&quot;</span><span class="p">,</span>
+            <span class="nx">head</span><span class="o">:</span> <span class="k">new</span> <span class="nx">Proton</span><span class="p">.</span><span class="nx">Vector3</span><span class="p">(</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">1.6</span><span class="p">,</span> <span class="mi">0</span> <span class="p">),</span>
+            <span class="nx">invisible</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nx">noShadows</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="c1">// keycontrols</span>
+            <span class="nx">movementSpeed</span><span class="o">:</span> <span class="mf">2.5</span>
+        <span class="p">}</span> <span class="p">);</span>
+        <span class="nx">Proton</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">controls</span><span class="p">.</span><span class="nx">camera</span><span class="p">.</span><span class="nx">init</span><span class="p">();</span>
+
+    <span class="p">}</span>
+<span class="p">}</span> <span class="p">);</span>
+</pre></div>
+</div>
+<p>What this does is it loads the playermodel you made earlier. It loades it with no physics and no shadows, in order to immerse the player into the environment.
+noPhysics is required in order to use the makePlayer function, and in order to use the parameter noShadows in said function, you have to have noShadows enabled for
+your imported mesh.</p>
+<p>Okay! Now let’s see what this makePlayer function does.</p>
+<p>After you import an object, it has a value named “objects”. This is the list of objects in your file that have been imported.
+Each object has an ability to be made a player - hence the use of “makePlayer”. Let’s now see what its parameters are.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">object</span><span class="p">.</span><span class="nx">makePlayer</span><span class="p">(</span> <span class="p">{</span>
+    <span class="c1">// camera</span>
+    <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;firstperson&quot;</span><span class="p">,</span> <span class="c1">// Can be set to &quot;firstperson&quot; or &quot;thirdperson&quot; modes.</span>
+    <span class="nx">head</span><span class="o">:</span> <span class="k">new</span> <span class="nx">Proton</span><span class="p">.</span><span class="nx">Vector3</span><span class="p">(</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">1.6</span><span class="p">,</span> <span class="mi">0</span> <span class="p">),</span> <span class="c1">// The location in which the head of your object is. You won&#39;t see your playermodel for this demo, so 1.6 metres seems like a convincing number.</span>
+    <span class="nx">invisible</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="c1">// This makes the player invisible. You wouldn&#39;t want to see your feet, would you? Ok, maybe so. But definitely not the inside of your head.</span>
+    <span class="nx">noShadows</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="c1">// Again, this has to be used in conjunction with noShadows on the object side for it to work. You don&#39;t have to disable shadows, but it helps with immersion.</span>
+    <span class="c1">// keycontrols</span>
+    <span class="nx">movementSpeed</span><span class="o">:</span> <span class="mf">2.5</span> <span class="c1">// Adjusts the movement speed of your player. Sprint speed is automatically calculated.</span>
+<span class="p">}</span> <span class="p">);</span>
+</pre></div>
+</div>
+<p>And that’s it! You’re done the whole thing! All that’s needed to be done next is testing your game.</p>
 </div>
 
 
