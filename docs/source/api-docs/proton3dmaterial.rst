@@ -1,23 +1,5 @@
 ================
 Proton3DMaterial
 ================
-
-Description
-===========
-[Stuff]
-
-Properties
-==========
-[Stuff]
-
-Methods
-=======
-[Stuff]
-
-Properties (detail)
-===================
-[Stuff]
-
-Methods (detail)
-================
-[Stuff]
+.. js:autoclass:: Proton3DMaterial
+    :members:

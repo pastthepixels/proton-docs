@@ -17,6 +17,9 @@
 # -- Cool theme --------------------------------------------------------------
 import sphinx_rtd_theme
 
+# -- sphinx-js stuff ---------------------------------------------------------
+js_source_path = '../source/js'
+
 # -- Project information -----------------------------------------------------
 
 project = 'Proton'
@@ -33,7 +36,8 @@ release = 'beta'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-	"sphinx_rtd_theme"
+	"sphinx_rtd_theme",
+	"sphinx_js"
 ]
 
 # Add any paths that contain templates here, relative to this directory.
