@@ -166,22 +166,752 @@
             
   <div class="section" id="proton3dobject">
 <h1>Proton3DObject<a class="headerlink" href="#proton3dobject" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Here are the possible options for the <code class="docutils literal notranslate"><span class="pre">extras</span></code> parameter of the constructor:</p>
+</div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+    type: &quot;cube&quot;|&quot;sphere&quot;|&quot;perspectivecamera&quot;|&quot;spotlight&quot;|&quot;sky&quot;|undefined/null (used when importing meshes),
+    fov: [A number around 1, only for cameras.],
+    position: new Proton.Vector3( [Number], [Number], [Number] ),
+    rotation: new Proton.Vector3( [Number], [Number], [Number] ) (Measures in degrees.),
+    sun: [A Proton3D light which is the &quot;sun&quot; of your sky. Only for skies.],
+    width: [A number. Only for cubes.],
+    height: [A number. Only for cubes.],
+    depth: [A number. Only for cubes.],
+    radius: [A number. Only for spheres.]
+    castShadow: [A boolean. Only for meshes.]
+    invisible: [A boolean. Only for meshes. (Calls object.makeInvisible().)],
+    noPhysics: [A boolean. Only for meshes.],
+    mass: [A number. Only for meshes.],
+    restitution: [A number, representing bounciness. Only for meshes.],
+    friction: [A number. Only for meshes.]
+}
+</pre></div>
+</div>
 <dl class="js class">
 <dt id="Proton3DObject">
-<em class="property">class </em><code class="sig-name descname">Proton3DObject</code><span class="sig-paren">(</span><em class="sig-param">param1</em>, <em class="sig-param">param2</em><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DObject" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">Proton3DObject</code><span class="sig-paren">(</span><em class="sig-param">extras</em><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DObject" title="Permalink to this definition">¶</a></dt>
 <dd><p>Description.</p>
-<p>Description</p>
+<p>The constructor for making an object in Proton uses a variable called “extras” to prevent multiple function
+parameters (that must be in exact order when called because JavaScript).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Arguments</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>param1</strong> (<em>object</em>) – Description</p></li>
-<li><p><strong>param2</strong> (<em>object</em>) – Description</p></li>
+<li><p><strong>extras</strong> (<em>object</em>) – Parameters for making the object.</p></li>
 </ul>
 </dd>
 </dl>
+<dl class="js attribute">
+<dt id="Proton3DObject.castShadow">
+<code class="sig-prename descclassname">Proton3DObject.</code><code class="sig-name descname">castShadow</code><a class="headerlink" href="#Proton3DObject.castShadow" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wether or not the object casts a shadow.</p>
+</dd></dl>
+
+<dl class="js attribute">
+<dt id="Proton3DObject.children">
+<code class="sig-prename descclassname">Proton3DObject.</code><code class="sig-name descname">children</code><a class="headerlink" href="#Proton3DObject.children" title="Permalink to this definition">¶</a></dt>
+<dd><p>Any sub-objects of the object</p>
+</dd></dl>
+
+<dl class="js attribute">
+<dt id="Proton3DObject.mass">
+<code class="sig-prename descclassname">Proton3DObject.</code><code class="sig-name descname">mass</code><a class="headerlink" href="#Proton3DObject.mass" title="Permalink to this definition">¶</a></dt>
+<dd><p>The mass of the object (0 = stationary)</p>
+</dd></dl>
+
+<dl class="js attribute">
+<dt id="Proton3DObject.onNear">
+<code class="sig-prename descclassname">Proton3DObject.</code><code class="sig-name descname">onNear</code><a class="headerlink" href="#Proton3DObject.onNear" title="Permalink to this definition">¶</a></dt>
+<dd><p>A function to be executed when the player is within the pickup distance.</p>
+</dd></dl>
+
+<dl class="js attribute">
+<dt id="Proton3DObject.onUse">
+<code class="sig-prename descclassname">Proton3DObject.</code><code class="sig-name descname">onUse</code><a class="headerlink" href="#Proton3DObject.onUse" title="Permalink to this definition">¶</a></dt>
+<dd><p>A function to be executed when the player is withing the pickup distance of the object, hovers over it with their crosshair, and presses their use key.</p>
+</dd></dl>
+
+<dl class="js attribute">
+<dt id="Proton3DObject.pickupDistance">
+<code class="sig-prename descclassname">Proton3DObject.</code><code class="sig-name descname">pickupDistance</code><a class="headerlink" href="#Proton3DObject.pickupDistance" title="Permalink to this definition">¶</a></dt>
+<dd><p>The distance the player has to be from the object to pick it up (or whatever they’d do) by pressing their use key (typically E).</p>
+</dd></dl>
+
+<dl class="js attribute">
+<dt id="Proton3DObject.position">
+<code class="sig-prename descclassname">Proton3DObject.</code><code class="sig-name descname">position</code><a class="headerlink" href="#Proton3DObject.position" title="Permalink to this definition">¶</a></dt>
+<dd><p>The position of the object.</p>
+</dd></dl>
+
+<dl class="js attribute">
+<dt id="Proton3DObject.receiveShadow">
+<code class="sig-prename descclassname">Proton3DObject.</code><code class="sig-name descname">receiveShadow</code><a class="headerlink" href="#Proton3DObject.receiveShadow" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wether or not the object can receive a shadow cast upon it. This should also work for self-shadows.</p>
+</dd></dl>
+
+<dl class="js attribute">
+<dt id="Proton3DObject.rotation">
+<code class="sig-prename descclassname">Proton3DObject.</code><code class="sig-name descname">rotation</code><a class="headerlink" href="#Proton3DObject.rotation" title="Permalink to this definition">¶</a></dt>
+<dd><p>The rotation of the object, measured in degrees.</p>
+</dd></dl>
+
 <dl class="js function">
-<dt id="Proton3DObject.functionName">
-<code class="sig-prename descclassname">Proton3DObject.</code><code class="sig-name descname">functionName</code><span class="sig-paren">(</span><em class="sig-param">parameter</em><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DObject.functionName" title="Permalink to this definition">¶</a></dt>
+<dt id="Proton3DObject.add">
+<code class="sig-prename descclassname">Proton3DObject.</code><code class="sig-name descname">add</code><span class="sig-paren">(</span><em class="sig-param">parameter</em><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DObject.add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Description</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parameter</strong> (<em>object</em>) – Description</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>number</strong> – Description</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt id="Proton3DObject.addAngularVelocity">
+<code class="sig-prename descclassname">Proton3DObject.</code><code class="sig-name descname">addAngularVelocity</code><span class="sig-paren">(</span><em class="sig-param">parameter</em><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DObject.addAngularVelocity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Description</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parameter</strong> (<em>object</em>) – Description</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>number</strong> – Description</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt id="Proton3DObject.addLinearVelocity">
+<code class="sig-prename descclassname">Proton3DObject.</code><code class="sig-name descname">addLinearVelocity</code><span class="sig-paren">(</span><em class="sig-param">parameter</em><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DObject.addLinearVelocity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Description</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parameter</strong> (<em>object</em>) – Description</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>number</strong> – Description</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt id="Proton3DObject.animatePosition">
+<code class="sig-prename descclassname">Proton3DObject.</code><code class="sig-name descname">animatePosition</code><span class="sig-paren">(</span><em class="sig-param">parameter</em><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DObject.animatePosition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Description</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parameter</strong> (<em>object</em>) – Description</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>number</strong> – Description</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt id="Proton3DObject.applyImpulse">
+<code class="sig-prename descclassname">Proton3DObject.</code><code class="sig-name descname">applyImpulse</code><span class="sig-paren">(</span><em class="sig-param">parameter</em><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DObject.applyImpulse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Description</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parameter</strong> (<em>object</em>) – Description</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>number</strong> – Description</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt id="Proton3DObject.changeFOV">
+<code class="sig-prename descclassname">Proton3DObject.</code><code class="sig-name descname">changeFOV</code><span class="sig-paren">(</span><em class="sig-param">value</em><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DObject.changeFOV" title="Permalink to this definition">¶</a></dt>
+<dd><p>Changes the field-of-view for a camera.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> (<em>number</em>) – The FOV, somewhere around 1.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt id="Proton3DObject.delete">
+<code class="sig-prename descclassname">Proton3DObject.</code><code class="sig-name descname">delete</code><span class="sig-paren">(</span><em class="sig-param">parameter</em><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DObject.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Description</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parameter</strong> (<em>object</em>) – Description</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>number</strong> – Description</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt id="Proton3DObject.getAngularVelocity">
+<code class="sig-prename descclassname">Proton3DObject.</code><code class="sig-name descname">getAngularVelocity</code><span class="sig-paren">(</span><em class="sig-param">parameter</em><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DObject.getAngularVelocity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Description</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parameter</strong> (<em>object</em>) – Description</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>number</strong> – Description</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt id="Proton3DObject.getLinearVelocity">
+<code class="sig-prename descclassname">Proton3DObject.</code><code class="sig-name descname">getLinearVelocity</code><span class="sig-paren">(</span><em class="sig-param">parameter</em><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DObject.getLinearVelocity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Description</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parameter</strong> (<em>object</em>) – Description</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>number</strong> – Description</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt id="Proton3DObject.getMass">
+<code class="sig-prename descclassname">Proton3DObject.</code><code class="sig-name descname">getMass</code><span class="sig-paren">(</span><em class="sig-param">parameter</em><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DObject.getMass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Description</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parameter</strong> (<em>object</em>) – Description</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>number</strong> – Description</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt id="Proton3DObject.getOnNear">
+<code class="sig-prename descclassname">Proton3DObject.</code><code class="sig-name descname">getOnNear</code><span class="sig-paren">(</span><em class="sig-param">parameter</em><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DObject.getOnNear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Description</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parameter</strong> (<em>object</em>) – Description</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>number</strong> – Description</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt id="Proton3DObject.getOnUse">
+<code class="sig-prename descclassname">Proton3DObject.</code><code class="sig-name descname">getOnUse</code><span class="sig-paren">(</span><em class="sig-param">parameter</em><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DObject.getOnUse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Description</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parameter</strong> (<em>object</em>) – Description</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>number</strong> – Description</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt id="Proton3DObject.getPickup">
+<code class="sig-prename descclassname">Proton3DObject.</code><code class="sig-name descname">getPickup</code><span class="sig-paren">(</span><em class="sig-param">parameter</em><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DObject.getPickup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Description</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parameter</strong> (<em>object</em>) – Description</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>number</strong> – Description</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt id="Proton3DObject.getPickupDistance">
+<code class="sig-prename descclassname">Proton3DObject.</code><code class="sig-name descname">getPickupDistance</code><span class="sig-paren">(</span><em class="sig-param">parameter</em><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DObject.getPickupDistance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Description</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parameter</strong> (<em>object</em>) – Description</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>number</strong> – Description</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt id="Proton3DObject.getPosition">
+<code class="sig-prename descclassname">Proton3DObject.</code><code class="sig-name descname">getPosition</code><span class="sig-paren">(</span><em class="sig-param">parameter</em><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DObject.getPosition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Description</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parameter</strong> (<em>object</em>) – Description</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>number</strong> – Description</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt id="Proton3DObject.getRotation">
+<code class="sig-prename descclassname">Proton3DObject.</code><code class="sig-name descname">getRotation</code><span class="sig-paren">(</span><em class="sig-param">parameter</em><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DObject.getRotation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Description</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parameter</strong> (<em>object</em>) – Description</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>number</strong> – Description</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt id="Proton3DObject.getShadowOptions">
+<code class="sig-prename descclassname">Proton3DObject.</code><code class="sig-name descname">getShadowOptions</code><span class="sig-paren">(</span><em class="sig-param">parameter</em><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DObject.getShadowOptions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Description</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parameter</strong> (<em>object</em>) – Description</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>number</strong> – Description</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt id="Proton3DObject.getWorldDirection">
+<code class="sig-prename descclassname">Proton3DObject.</code><code class="sig-name descname">getWorldDirection</code><span class="sig-paren">(</span><em class="sig-param">parameter</em><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DObject.getWorldDirection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Description</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parameter</strong> (<em>object</em>) – Description</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>number</strong> – Description</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt id="Proton3DObject.getWorldPosition">
+<code class="sig-prename descclassname">Proton3DObject.</code><code class="sig-name descname">getWorldPosition</code><span class="sig-paren">(</span><em class="sig-param">parameter</em><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DObject.getWorldPosition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Description</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parameter</strong> (<em>object</em>) – Description</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>number</strong> – Description</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt id="Proton3DObject.getWorldRotation">
+<code class="sig-prename descclassname">Proton3DObject.</code><code class="sig-name descname">getWorldRotation</code><span class="sig-paren">(</span><em class="sig-param">parameter</em><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DObject.getWorldRotation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Description</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parameter</strong> (<em>object</em>) – Description</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>number</strong> – Description</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt id="Proton3DObject.isPhysicsReady">
+<code class="sig-prename descclassname">Proton3DObject.</code><code class="sig-name descname">isPhysicsReady</code><span class="sig-paren">(</span><em class="sig-param">parameter</em><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DObject.isPhysicsReady" title="Permalink to this definition">¶</a></dt>
+<dd><p>Description</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parameter</strong> (<em>object</em>) – Description</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>number</strong> – Description</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt id="Proton3DObject.lookAt">
+<code class="sig-prename descclassname">Proton3DObject.</code><code class="sig-name descname">lookAt</code><span class="sig-paren">(</span><em class="sig-param">parameter</em><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DObject.lookAt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Description</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parameter</strong> (<em>object</em>) – Description</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>number</strong> – Description</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt id="Proton3DObject.makeInvisible">
+<code class="sig-prename descclassname">Proton3DObject.</code><code class="sig-name descname">makeInvisible</code><span class="sig-paren">(</span><em class="sig-param">parameter</em><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DObject.makeInvisible" title="Permalink to this definition">¶</a></dt>
+<dd><p>Description</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parameter</strong> (<em>object</em>) – Description</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>number</strong> – Description</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt id="Proton3DObject.makePlayer">
+<code class="sig-prename descclassname">Proton3DObject.</code><code class="sig-name descname">makePlayer</code><span class="sig-paren">(</span><em class="sig-param">parameter</em><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DObject.makePlayer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Description</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parameter</strong> (<em>object</em>) – Description</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>number</strong> – Description</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt id="Proton3DObject.playAudio">
+<code class="sig-prename descclassname">Proton3DObject.</code><code class="sig-name descname">playAudio</code><span class="sig-paren">(</span><em class="sig-param">parameter</em><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DObject.playAudio" title="Permalink to this definition">¶</a></dt>
+<dd><p>Description</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parameter</strong> (<em>object</em>) – Description</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>number</strong> – Description</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt id="Proton3DObject.remove">
+<code class="sig-prename descclassname">Proton3DObject.</code><code class="sig-name descname">remove</code><span class="sig-paren">(</span><em class="sig-param">parameter</em><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DObject.remove" title="Permalink to this definition">¶</a></dt>
+<dd><p>Description</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parameter</strong> (<em>object</em>) – Description</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>number</strong> – Description</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt id="Proton3DObject.setAngle">
+<code class="sig-prename descclassname">Proton3DObject.</code><code class="sig-name descname">setAngle</code><span class="sig-paren">(</span><em class="sig-param">parameter</em><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DObject.setAngle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Description</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parameter</strong> (<em>object</em>) – Description</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>number</strong> – Description</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt id="Proton3DObject.setAngularFactor">
+<code class="sig-prename descclassname">Proton3DObject.</code><code class="sig-name descname">setAngularFactor</code><span class="sig-paren">(</span><em class="sig-param">parameter</em><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DObject.setAngularFactor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Description</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parameter</strong> (<em>object</em>) – Description</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>number</strong> – Description</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt id="Proton3DObject.setAngularVelocity">
+<code class="sig-prename descclassname">Proton3DObject.</code><code class="sig-name descname">setAngularVelocity</code><span class="sig-paren">(</span><em class="sig-param">parameter</em><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DObject.setAngularVelocity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Description</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parameter</strong> (<em>object</em>) – Description</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>number</strong> – Description</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt id="Proton3DObject.setDamping">
+<code class="sig-prename descclassname">Proton3DObject.</code><code class="sig-name descname">setDamping</code><span class="sig-paren">(</span><em class="sig-param">parameter</em><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DObject.setDamping" title="Permalink to this definition">¶</a></dt>
+<dd><p>Description</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parameter</strong> (<em>object</em>) – Description</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>number</strong> – Description</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt id="Proton3DObject.setIntensity">
+<code class="sig-prename descclassname">Proton3DObject.</code><code class="sig-name descname">setIntensity</code><span class="sig-paren">(</span><em class="sig-param">parameter</em><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DObject.setIntensity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Description</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parameter</strong> (<em>object</em>) – Description</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>number</strong> – Description</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt id="Proton3DObject.setLinearFactor">
+<code class="sig-prename descclassname">Proton3DObject.</code><code class="sig-name descname">setLinearFactor</code><span class="sig-paren">(</span><em class="sig-param">parameter</em><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DObject.setLinearFactor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Description</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parameter</strong> (<em>object</em>) – Description</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>number</strong> – Description</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt id="Proton3DObject.setLinearVelocity">
+<code class="sig-prename descclassname">Proton3DObject.</code><code class="sig-name descname">setLinearVelocity</code><span class="sig-paren">(</span><em class="sig-param">parameter</em><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DObject.setLinearVelocity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Description</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parameter</strong> (<em>object</em>) – Description</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>number</strong> – Description</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt id="Proton3DObject.setMass">
+<code class="sig-prename descclassname">Proton3DObject.</code><code class="sig-name descname">setMass</code><span class="sig-paren">(</span><em class="sig-param">parameter</em><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DObject.setMass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Description</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parameter</strong> (<em>object</em>) – Description</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>number</strong> – Description</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt id="Proton3DObject.setOnNear">
+<code class="sig-prename descclassname">Proton3DObject.</code><code class="sig-name descname">setOnNear</code><span class="sig-paren">(</span><em class="sig-param">parameter</em><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DObject.setOnNear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Description</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parameter</strong> (<em>object</em>) – Description</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>number</strong> – Description</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt id="Proton3DObject.setOnUse">
+<code class="sig-prename descclassname">Proton3DObject.</code><code class="sig-name descname">setOnUse</code><span class="sig-paren">(</span><em class="sig-param">parameter</em><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DObject.setOnUse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Description</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parameter</strong> (<em>object</em>) – Description</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>number</strong> – Description</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt id="Proton3DObject.setPickup">
+<code class="sig-prename descclassname">Proton3DObject.</code><code class="sig-name descname">setPickup</code><span class="sig-paren">(</span><em class="sig-param">parameter</em><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DObject.setPickup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Description</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parameter</strong> (<em>object</em>) – Description</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>number</strong> – Description</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt id="Proton3DObject.setPickupDistance">
+<code class="sig-prename descclassname">Proton3DObject.</code><code class="sig-name descname">setPickupDistance</code><span class="sig-paren">(</span><em class="sig-param">parameter</em><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DObject.setPickupDistance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Description</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parameter</strong> (<em>object</em>) – Description</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>number</strong> – Description</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt id="Proton3DObject.setPosition">
+<code class="sig-prename descclassname">Proton3DObject.</code><code class="sig-name descname">setPosition</code><span class="sig-paren">(</span><em class="sig-param">parameter</em><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DObject.setPosition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Description</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parameter</strong> (<em>object</em>) – Description</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>number</strong> – Description</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt id="Proton3DObject.setRotation">
+<code class="sig-prename descclassname">Proton3DObject.</code><code class="sig-name descname">setRotation</code><span class="sig-paren">(</span><em class="sig-param">parameter</em><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DObject.setRotation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Description</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parameter</strong> (<em>object</em>) – Description</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>number</strong> – Description</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt id="Proton3DObject.setShadowOptions">
+<code class="sig-prename descclassname">Proton3DObject.</code><code class="sig-name descname">setShadowOptions</code><span class="sig-paren">(</span><em class="sig-param">parameter</em><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DObject.setShadowOptions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Description</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parameter</strong> (<em>object</em>) – Description</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>number</strong> – Description</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt id="Proton3DObject.setSunPosition">
+<code class="sig-prename descclassname">Proton3DObject.</code><code class="sig-name descname">setSunPosition</code><span class="sig-paren">(</span><em class="sig-param">parameter</em><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DObject.setSunPosition" title="Permalink to this definition">¶</a></dt>
 <dd><p>Description</p>
 <dl class="field-list simple">
 <dt class="field-odd">Arguments</dt>
