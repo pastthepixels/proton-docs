@@ -1,0 +1,278 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Proton3DInterpreter &mdash; Proton beta documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Proton3DObject" href="proton3dobject.html" />
+    <link rel="prev" title="Proton3DMaterial" href="proton3dmaterial.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Proton
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/index.html">Getting Started With Proton</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/setting-up-your-environment/index.html">Setting Up Your (Development) Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/setting-up-your-scene/index.html">Setting Up Your Scene</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/testing-your-game.html">Testing Your Game</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="proton3dmaterial.html">Proton3DMaterial</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Proton3DInterpreter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proton3dobject.html">Proton3DObject</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proton3dscene.html">Proton3DScene</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../about/what-is-proton.html">What is Proton?</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Proton</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Proton3DInterpreter</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/api-docs/proton3dinterpreter.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="proton3dinterpreter">
+<h1>Proton3DInterpreter<a class="headerlink" href="#proton3dinterpreter" title="Permalink to this headline">¶</a></h1>
+<p>Instead of directly listing everything the Proton3DInterpreter does by default,
+this is a quick page on how to edit it since all of the functions here have their Proton counterparts already documented.</p>
+<p>So, you want to switch Proton’s underlying engine.</p>
+<p>Before you embark on this journey, here are some things to note:</p>
+<ul class="simple">
+<li><p>The Proton3DInterpreter doesn’t do anything new - its purpose is to do everything in the documentation, but actually be the part that speaks to whatever engine you are using. (In this case, it’s babylon.js. You should check it out at babylonjs.com!)</p></li>
+<li><p>Make sure to always return the same things that have been returned in the default Proton3DInterpreter!</p></li>
+<li><p>Comments should help you on your way. I have quite a few of them, so I do hope that helps!</p></li>
+<li><p>Proton3DObject functions are in the “Proton3DObject” sub-object, and the same applies for the Proton3DMaterial class.</p></li>
+<li><p>The Proton3DInterpreter works in a way where it is initialized by the scene with the all parameters from [scene].init. It is a class, so a new instance is created here, but keep in mind that you will only need one scene/interpreter combination - that which Proton automatically makes.</p></li>
+</ul>
+<p>Still up for the task? Here’s how you begin:</p>
+<ol class="arabic simple">
+<li><p>Redefine the Proton3DInterpreter in a new JavaScript script, imported after Proton.</p></li>
+</ol>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">Proton3DInterpreter</span> <span class="o">=</span> <span class="kd">class</span> <span class="p">...</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Paste the current Proton3DInterpreter (located at [Proton]/engine/wrapper.js) into where the word “class” is marked in step 1, and remove the “Proton3DInterpreter” from your pasted text (or else you’d declare it twice).</p></li>
+<li><p>Now you can start! Wait, you probably want to import your scripts in a similar fashion to what Proton does. If you need to import your scripts with a quick and easy fashion, here is how Proton does it (note that you can change script paths in Proton to local ones):</p></li>
+</ol>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">init</span><span class="p">(</span> <span class="nx">scripts</span> <span class="p">)</span> <span class="p">{</span>
+
+    <span class="nx">scriptStats</span><span class="p">.</span><span class="nx">maxScripts</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="nx">scripts</span> <span class="p">)</span> <span class="p">{</span>
+
+        <span class="nx">scripts</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="nx">ammojs</span><span class="o">:</span> <span class="s2">&quot;https://cdn.babylonjs.com/ammo.js&quot;</span><span class="p">,</span>
+            <span class="nx">babylonjs</span><span class="o">:</span> <span class="s2">&quot;https://cdn.babylonjs.com/babylon.js&quot;</span><span class="p">,</span>
+            <span class="nx">babylonjs_materials</span><span class="o">:</span> <span class="s2">&quot;https://preview.babylonjs.com/materialsLibrary/babylonjs.materials.js&quot;</span><span class="p">,</span>
+            <span class="nx">babylonjs_loaders</span><span class="o">:</span> <span class="s2">&quot;https://preview.babylonjs.com/loaders/babylonjs.loaders.js&quot;</span>
+        <span class="p">};</span>
+
+    <span class="p">}</span>
+    <span class="nx">scriptStats</span><span class="p">.</span><span class="nx">scripts</span> <span class="o">=</span> <span class="nx">scripts</span><span class="p">;</span>
+
+    <span class="c1">// Babylon.js</span>
+    <span class="nx">importScript</span><span class="p">(</span> <span class="nx">scripts</span><span class="p">.</span><span class="nx">babylonjs</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// Stuff that creates the sky + more materials</span>
+        <span class="nx">importScript</span><span class="p">(</span> <span class="nx">scripts</span><span class="p">.</span><span class="nx">babylonjs_materials</span><span class="p">,</span> <span class="kc">true</span> <span class="p">);</span>
+
+        <span class="c1">// Stuff that loads files like glTF</span>
+        <span class="nx">importScript</span><span class="p">(</span> <span class="nx">scripts</span><span class="p">.</span><span class="nx">babylonjs_loaders</span><span class="p">,</span> <span class="kc">true</span> <span class="p">);</span>
+
+        <span class="c1">// Physics!</span>
+        <span class="nx">importScript</span><span class="p">(</span> <span class="nx">scripts</span><span class="p">.</span><span class="nx">ammojs</span><span class="p">,</span> <span class="kc">false</span> <span class="p">);</span>
+    <span class="p">}</span> <span class="p">);</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Now you can get to work! Make sure you know what you’re doing, as this can break Proton. Don’t worry if it is! You can always just repeat these steps and start fresh. This is a tedious job after all, so I wish you good luck!</p></li>
+</ol>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="proton3dobject.html" class="btn btn-neutral float-right" title="Proton3DObject" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="proton3dmaterial.html" class="btn btn-neutral float-left" title="Proton3DMaterial" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020, PastThePixels.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

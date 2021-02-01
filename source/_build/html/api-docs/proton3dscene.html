@@ -1,0 +1,396 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Proton3DScene &mdash; Proton beta documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="What is Proton?" href="../about/what-is-proton.html" />
+    <link rel="prev" title="Proton3DObject" href="proton3dobject.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Proton
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/index.html">Getting Started With Proton</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/setting-up-your-environment/index.html">Setting Up Your (Development) Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/setting-up-your-scene/index.html">Setting Up Your Scene</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/testing-your-game.html">Testing Your Game</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="proton3dmaterial.html">Proton3DMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proton3dinterpreter.html">Proton3DInterpreter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proton3dobject.html">Proton3DObject</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Proton3DScene</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../about/what-is-proton.html">What is Proton?</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Proton</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Proton3DScene</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/api-docs/proton3dscene.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="proton3dscene">
+<h1>Proton3DScene<a class="headerlink" href="#proton3dscene" title="Permalink to this headline">¶</a></h1>
+<dl class="js class">
+<dt id="Proton3DScene">
+<em class="property">class </em><code class="sig-name descname">Proton3DScene</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DScene" title="Permalink to this definition">¶</a></dt>
+<dd><p>Description.</p>
+<p>The constructor doesn’t have anything important; everything is done automatically.</p>
+<dl class="js attribute">
+<dt id="Proton3DScene.camera">
+<code class="sig-prename descclassname">Proton3DScene.</code><code class="sig-name descname">camera</code><a class="headerlink" href="#Proton3DScene.camera" title="Permalink to this definition">¶</a></dt>
+<dd><p>The scene’s camera (a Proton3DObject, created after initializing the scene)</p>
+</dd></dl>
+
+<dl class="js attribute">
+<dt id="Proton3DScene.children">
+<code class="sig-prename descclassname">Proton3DScene.</code><code class="sig-name descname">children</code><a class="headerlink" href="#Proton3DScene.children" title="Permalink to this definition">¶</a></dt>
+<dd><p>An array consisting of the objects in the scene.</p>
+</dd></dl>
+
+<dl class="js attribute">
+<dt id="Proton3DScene.crosshair">
+<code class="sig-prename descclassname">Proton3DScene.</code><code class="sig-name descname">crosshair</code><a class="headerlink" href="#Proton3DScene.crosshair" title="Permalink to this definition">¶</a></dt>
+<dd><p>A crosshair created after the function setCameraControls is executed. It has a property called “position”, which is helpful to see the point in which the player is facing.</p>
+</dd></dl>
+
+<dl class="js attribute">
+<dt id="Proton3DScene.extraFunctions">
+<code class="sig-prename descclassname">Proton3DScene.</code><code class="sig-name descname">extraFunctions</code><a class="headerlink" href="#Proton3DScene.extraFunctions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Functions that should be executed every now and then (close to whenever each frame is rendered, but not quite.)</p>
+</dd></dl>
+
+<dl class="js attribute">
+<dt id="Proton3DScene.extraKeyControls">
+<code class="sig-prename descclassname">Proton3DScene.</code><code class="sig-name descname">extraKeyControls</code><a class="headerlink" href="#Proton3DScene.extraKeyControls" title="Permalink to this definition">¶</a></dt>
+<dd><p>An array of extra functions to be ran whenever a(ny) key is pressed.</p>
+</dd></dl>
+
+<dl class="js attribute">
+<dt id="Proton3DScene.interpreter">
+<code class="sig-prename descclassname">Proton3DScene.</code><code class="sig-name descname">interpreter</code><a class="headerlink" href="#Proton3DScene.interpreter" title="Permalink to this definition">¶</a></dt>
+<dd><p>A Proton3DInterpreter class.</p>
+</dd></dl>
+
+<dl class="js attribute">
+<dt id="Proton3DScene.keys">
+<code class="sig-prename descclassname">Proton3DScene.</code><code class="sig-name descname">keys</code><a class="headerlink" href="#Proton3DScene.keys" title="Permalink to this definition">¶</a></dt>
+<dd><p>An object consisting of the current keys being pressed at the current moment.</p>
+</dd></dl>
+
+<dl class="js attribute">
+<dt id="Proton3DScene.mappedKeys">
+<code class="sig-prename descclassname">Proton3DScene.</code><code class="sig-name descname">mappedKeys</code><a class="headerlink" href="#Proton3DScene.mappedKeys" title="Permalink to this definition">¶</a></dt>
+<dd><p>An object consisting of key codes and their corresponding functions.</p>
+</dd></dl>
+
+<dl class="js attribute">
+<dt id="Proton3DScene.priorityExtraFunctions">
+<code class="sig-prename descclassname">Proton3DScene.</code><code class="sig-name descname">priorityExtraFunctions</code><a class="headerlink" href="#Proton3DScene.priorityExtraFunctions" title="Permalink to this definition">¶</a></dt>
+<dd><p>An array of functions to be executed whenever a frame is rendered.</p>
+</dd></dl>
+
+<dl class="js attribute">
+<dt id="Proton3DScene.sky">
+<code class="sig-prename descclassname">Proton3DScene.</code><code class="sig-name descname">sky</code><a class="headerlink" href="#Proton3DScene.sky" title="Permalink to this definition">¶</a></dt>
+<dd><p>A sky object that is created after initializing the scene.</p>
+</dd></dl>
+
+<dl class="js function">
+<dt id="Proton3DScene.getObjectList">
+<code class="sig-prename descclassname">Proton3DScene.</code><code class="sig-name descname">getObjectList</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DScene.getObjectList" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the list of all the objects in the scene. You can also use [scene].children.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>array</strong> – The array containing all the objects in the scene.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt id="Proton3DScene.init">
+<code class="sig-prename descclassname">Proton3DScene.</code><code class="sig-name descname">init</code><span class="sig-paren">(</span><em class="sig-param">extras</em><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DScene.init" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initializes the scene. This is done automatically; you should instead see Proton.init() for user-configurable options.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>extras</strong> (<em>object</em>) – Parameters for initializing the scene.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt id="Proton3DScene.pickUpObject">
+<code class="sig-prename descclassname">Proton3DScene.</code><code class="sig-name descname">pickUpObject</code><span class="sig-paren">(</span><em class="sig-param">child</em><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DScene.pickUpObject" title="Permalink to this definition">¶</a></dt>
+<dd><p>“Picks up” an object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>child</strong> (<em>object</em>) – The object to be picked up.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt id="Proton3DScene.remove">
+<code class="sig-prename descclassname">Proton3DScene.</code><code class="sig-name descname">remove</code><span class="sig-paren">(</span><em class="sig-param">parameter</em><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DScene.remove" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes an object from the scene.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parameter</strong> (<em>object</em>) – The object to be removed from the scene.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt id="Proton3DScene.resetPickingUp">
+<code class="sig-prename descclassname">Proton3DScene.</code><code class="sig-name descname">resetPickingUp</code><span class="sig-paren">(</span><em class="sig-param">child</em>, <em class="sig-param">scene</em>, <em class="sig-param">callback</em><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DScene.resetPickingUp" title="Permalink to this definition">¶</a></dt>
+<dd><p>An automatic function called to stop picking up an object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>child</strong> (<em>object</em>) – The object that is currently being picked up.</p></li>
+<li><p><strong>scene</strong> (<em>object</em>) – The scene for which it should be removed.</p></li>
+<li><p><strong>callback</strong> (<em>function</em>) – An optional function to be called once the object has been “let go”.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt id="Proton3DScene.setCameraControls">
+<code class="sig-prename descclassname">Proton3DScene.</code><code class="sig-name descname">setCameraControls</code><span class="sig-paren">(</span><em class="sig-param">extras</em><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DScene.setCameraControls" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initializes mouse controls.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>extras</strong> (<em>object</em>) – The parameters for this function. An example: { distance: Proton.Vector3, xSensitivity: Number, ySensitivity: Number, invisibleParent: Boolean, cameraParent: Proton3DObject, type: “firstperson”|”thirdperson”, distance: Proton.Vector3 (for third person camera control types only), gun: Proton3DObject, gunPosition: Proton.Vector3 }</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt id="Proton3DScene.setKeyControls">
+<code class="sig-prename descclassname">Proton3DScene.</code><code class="sig-name descname">setKeyControls</code><span class="sig-paren">(</span><em class="sig-param">obj</em>, <em class="sig-param">movementSpeed=2.5</em>, <em class="sig-param">jumpHeight</em>, <em class="sig-param">extras</em><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DScene.setKeyControls" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initializes keyboard controls for the scene</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<em>object</em>) – The player.</p></li>
+<li><p><strong>movementSpeed</strong> (<em>number</em>) – The movement speed of the player (optional).</p></li>
+<li><p><strong>jumpHeight</strong> (<em>number</em>) – The  jump height of the player.</p></li>
+<li><p><strong>extras</strong> (<em>object</em>) – Optional extra parameters for this function. (You don’t have to worry about this as a user since it is automatic.)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt id="Proton3DScene.setPickingUpControls">
+<code class="sig-prename descclassname">Proton3DScene.</code><code class="sig-name descname">setPickingUpControls</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DScene.setPickingUpControls" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets controls for using objects.</p>
+</dd></dl>
+
+<dl class="js function">
+<dt id="Proton3DScene.update">
+<code class="sig-prename descclassname">Proton3DScene.</code><code class="sig-name descname">update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DScene.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates the scene: renders the scene, updates physics, and calls any functions under [scene].priorityExtraFunctions. Every other frame, it runs functions under [scene].extraFunctions.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../about/what-is-proton.html" class="btn btn-neutral float-right" title="What is Proton?" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="proton3dobject.html" class="btn btn-neutral float-left" title="Proton3DObject" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020, PastThePixels.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

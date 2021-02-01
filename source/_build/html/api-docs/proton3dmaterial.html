@@ -1,0 +1,455 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Proton3DMaterial &mdash; Proton beta documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Proton3DInterpreter" href="proton3dinterpreter.html" />
+    <link rel="prev" title="Testing Your Game" href="../getting-started/testing-your-game.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Proton
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/index.html">Getting Started With Proton</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/setting-up-your-environment/index.html">Setting Up Your (Development) Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/setting-up-your-scene/index.html">Setting Up Your Scene</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/testing-your-game.html">Testing Your Game</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Proton3DMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proton3dinterpreter.html">Proton3DInterpreter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proton3dobject.html">Proton3DObject</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proton3dscene.html">Proton3DScene</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../about/what-is-proton.html">What is Proton?</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Proton</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Proton3DMaterial</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/api-docs/proton3dmaterial.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="proton3dmaterial">
+<h1>Proton3DMaterial<a class="headerlink" href="#proton3dmaterial" title="Permalink to this headline">¶</a></h1>
+<dl class="js class">
+<dt id="Proton3DMaterial">
+<em class="property">class </em><code class="sig-name descname">Proton3DMaterial</code><span class="sig-paren">(</span><em class="sig-param">parentObject</em>, <em class="sig-param">extras</em><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DMaterial" title="Permalink to this definition">¶</a></dt>
+<dd><p>The class that represents a material for a mesh in Proton.</p>
+<p>The constructor does some fancy stuff to work for imported objects,
+but you don’t have to worry about this since it is automatic.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parentObject</strong> (<em>object</em>) – The (Proton3D)object that will have the material assigned to it</p></li>
+<li><p><strong>extras</strong> (<em>object</em>) – A list of parameters for this function. All that matters for this function is extras.name, which is the name of the material.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="js attribute">
+<dt id="Proton3DMaterial.color">
+<code class="sig-prename descclassname">Proton3DMaterial.</code><code class="sig-name descname">color</code><a class="headerlink" href="#Proton3DMaterial.color" title="Permalink to this definition">¶</a></dt>
+<dd><p>The color of the material, in a hexadecimal color value.</p>
+</dd></dl>
+
+<dl class="js attribute">
+<dt id="Proton3DMaterial.emissive">
+<code class="sig-prename descclassname">Proton3DMaterial.</code><code class="sig-name descname">emissive</code><a class="headerlink" href="#Proton3DMaterial.emissive" title="Permalink to this definition">¶</a></dt>
+<dd><p>The emissive strength of the material: a value between 0 and 1.</p>
+</dd></dl>
+
+<dl class="js attribute">
+<dt id="Proton3DMaterial.emissiveColor">
+<code class="sig-prename descclassname">Proton3DMaterial.</code><code class="sig-name descname">emissiveColor</code><a class="headerlink" href="#Proton3DMaterial.emissiveColor" title="Permalink to this definition">¶</a></dt>
+<dd><p>The emissive color of the material, in a hexadecimal color value.</p>
+</dd></dl>
+
+<dl class="js attribute">
+<dt id="Proton3DMaterial.metalness">
+<code class="sig-prename descclassname">Proton3DMaterial.</code><code class="sig-name descname">metalness</code><a class="headerlink" href="#Proton3DMaterial.metalness" title="Permalink to this definition">¶</a></dt>
+<dd><p>The “metalness” of the material: a value between 0 and 1.</p>
+</dd></dl>
+
+<dl class="js attribute">
+<dt id="Proton3DMaterial.opacity">
+<code class="sig-prename descclassname">Proton3DMaterial.</code><code class="sig-name descname">opacity</code><a class="headerlink" href="#Proton3DMaterial.opacity" title="Permalink to this definition">¶</a></dt>
+<dd><p>The opacity of the material: a value between 0 and 1.</p>
+</dd></dl>
+
+<dl class="js attribute">
+<dt id="Proton3DMaterial.roughness">
+<code class="sig-prename descclassname">Proton3DMaterial.</code><code class="sig-name descname">roughness</code><a class="headerlink" href="#Proton3DMaterial.roughness" title="Permalink to this definition">¶</a></dt>
+<dd><p>The roughness of the material: a value between 0 and 1.</p>
+</dd></dl>
+
+<dl class="js attribute">
+<dt id="Proton3DMaterial.wireframe">
+<code class="sig-prename descclassname">Proton3DMaterial.</code><code class="sig-name descname">wireframe</code><a class="headerlink" href="#Proton3DMaterial.wireframe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Whether or not the material is rendered in “wireframe” mode.</p>
+</dd></dl>
+
+<dl class="js function">
+<dt id="Proton3DMaterial.getColor">
+<code class="sig-prename descclassname">Proton3DMaterial.</code><code class="sig-name descname">getColor</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DMaterial.getColor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the current color of the material.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>string</strong> – A hexadecimal color value.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt id="Proton3DMaterial.getEmissive">
+<code class="sig-prename descclassname">Proton3DMaterial.</code><code class="sig-name descname">getEmissive</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DMaterial.getEmissive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the emissive intensity of the material.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>number</strong> – The emissive intensity: a value between 0 and 1.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt id="Proton3DMaterial.getEmissiveColor">
+<code class="sig-prename descclassname">Proton3DMaterial.</code><code class="sig-name descname">getEmissiveColor</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DMaterial.getEmissiveColor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the emissive color of the material</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>string</strong> – A hexadecimal color value</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt id="Proton3DMaterial.getMetalness">
+<code class="sig-prename descclassname">Proton3DMaterial.</code><code class="sig-name descname">getMetalness</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DMaterial.getMetalness" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the metalness of the material.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>number</strong> – The metalness of the material: a value between 0 and 1.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt id="Proton3DMaterial.getOpacity">
+<code class="sig-prename descclassname">Proton3DMaterial.</code><code class="sig-name descname">getOpacity</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DMaterial.getOpacity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the opacity of the material.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>number</strong> – The opacity of the material: a value between 0 and 1.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt id="Proton3DMaterial.getRoughness">
+<code class="sig-prename descclassname">Proton3DMaterial.</code><code class="sig-name descname">getRoughness</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DMaterial.getRoughness" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the roughness of the material.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>number</strong> – The roughness of the material: a value between 0 and 1.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt id="Proton3DMaterial.getWireframe">
+<code class="sig-prename descclassname">Proton3DMaterial.</code><code class="sig-name descname">getWireframe</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DMaterial.getWireframe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the value of wether or not wireframe is enabled for the material</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>boolean</strong> – Whether or not the material has wireframe enabled</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt id="Proton3DMaterial.makeTransparent">
+<code class="sig-prename descclassname">Proton3DMaterial.</code><code class="sig-name descname">makeTransparent</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DMaterial.makeTransparent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Makes the material transparent.</p>
+</dd></dl>
+
+<dl class="js function">
+<dt id="Proton3DMaterial.setColor">
+<code class="sig-prename descclassname">Proton3DMaterial.</code><code class="sig-name descname">setColor</code><span class="sig-paren">(</span><em class="sig-param">hexString</em><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DMaterial.setColor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Changes the color of the material.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hexString</strong> (<em>string</em>) – A hexadecimal color value.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt id="Proton3DMaterial.setEmissive">
+<code class="sig-prename descclassname">Proton3DMaterial.</code><code class="sig-name descname">setEmissive</code><span class="sig-paren">(</span><em class="sig-param">value</em><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DMaterial.setEmissive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the emissive intensity of the material.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> (<em>number</em>) – The emissive intensity: a value between 0 and 1.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt id="Proton3DMaterial.setEmissiveColor">
+<code class="sig-prename descclassname">Proton3DMaterial.</code><code class="sig-name descname">setEmissiveColor</code><span class="sig-paren">(</span><em class="sig-param">color</em><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DMaterial.setEmissiveColor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the emissive color of the material</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>color</strong> (<em>string</em>) – A hexadecimal color value</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt id="Proton3DMaterial.setMetalness">
+<code class="sig-prename descclassname">Proton3DMaterial.</code><code class="sig-name descname">setMetalness</code><span class="sig-paren">(</span><em class="sig-param">value</em><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DMaterial.setMetalness" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the metalness of the material (how much it looks like metal).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> (<em>number</em>) – The metalness of the material: a value between 0 and 1.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt id="Proton3DMaterial.setOpacity">
+<code class="sig-prename descclassname">Proton3DMaterial.</code><code class="sig-name descname">setOpacity</code><span class="sig-paren">(</span><em class="sig-param">value</em><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DMaterial.setOpacity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the opacity of the material.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> (<em>number</em>) – The opacity of the material: a value between 0 and 1.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt id="Proton3DMaterial.setRoughness">
+<code class="sig-prename descclassname">Proton3DMaterial.</code><code class="sig-name descname">setRoughness</code><span class="sig-paren">(</span><em class="sig-param">value</em><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DMaterial.setRoughness" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the roughness of the material.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> (<em>number</em>) – The roughness of the material: a value between 0 and 1.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt id="Proton3DMaterial.setWireframe">
+<code class="sig-prename descclassname">Proton3DMaterial.</code><code class="sig-name descname">setWireframe</code><span class="sig-paren">(</span><em class="sig-param">value</em><span class="sig-paren">)</span><a class="headerlink" href="#Proton3DMaterial.setWireframe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Turns on or off wireframe rendering for the material</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> (<em>boolean</em>) – Whether or not the material has wireframe enabled</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="proton3dinterpreter.html" class="btn btn-neutral float-right" title="Proton3DInterpreter" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../getting-started/testing-your-game.html" class="btn btn-neutral float-left" title="Testing Your Game" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020, PastThePixels.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
