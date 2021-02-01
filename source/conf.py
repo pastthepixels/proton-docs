@@ -25,6 +25,7 @@ js_source_path = '../source/js'
 project = 'Proton'
 copyright = '2020, PastThePixels'
 author = 'PastThePixels'
+master_doc = 'index'
 
 # The full version, including alpha/beta/rc tags
 release = 'beta'
