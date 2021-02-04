@@ -38,6 +38,7 @@ Table of Contents
    api-docs/proton3dinterpreter.rst
    api-docs/proton3dobject.rst
    api-docs/proton3dscene.rst
+   api-docs/proton.rst
 
 .. toctree::
    :maxdepth: 2

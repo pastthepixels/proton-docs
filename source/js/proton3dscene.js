@@ -41,6 +41,9 @@ class Proton3DScene {
     /** The scene's camera (a Proton3DObject, created after initializing the scene) */
     camera = {}
 
+    /** The scene's camera, but for third person camera views. This is optional when you switch Proton3DInterpreters. */
+    thirdCamera = {}
+
     /** An array consisting of the objects in the scene. */
     children = []
 
@@ -91,7 +94,7 @@ class Proton3DScene {
 
     /**
      * Initializes mouse controls.
-     * @param { object } extras The parameters for this function. An example: { distance: Proton.Vector3, xSensitivity: Number, ySensitivity: Number, invisibleParent: Boolean, cameraParent: Proton3DObject, type: "firstperson"|"thirdperson", distance: Proton.Vector3 (for third person camera control types only), gun: Proton3DObject, gunPosition: Proton.Vector3 }
+     * @param { object } extras The parameters for this function. An example: { distance: Proton.Vector3, height: Number (optional, in metres), xSensitivity: Number, ySensitivity: Number, invisibleParent: Boolean, cameraParent: Proton3DObject, type: "firstperson"|"thirdperson", distance: Proton.Vector3 (for third person camera control types only), gun: Proton3DObject, gunPosition: Proton.Vector3 }
      */
     setCameraControls( extras ) {
         // ...

@@ -7,7 +7,7 @@ Proton3DObject
 .. code-block:: json
 
     {
-        type: "cube"|"sphere"|"perspectivecamera"|"spotlight"|"sky"|undefined/null (used when importing meshes),
+        type: "cube"|"sphere"|"perspectivecamera"|"3rdperspectivecamera"|"spotlight"|"sky"|undefined/null (used when importing meshes),
         fov: [A number around 1, only for cameras.],
         position: new Proton.Vector3( [Number], [Number], [Number] ),
         rotation: new Proton.Vector3( [Number], [Number], [Number] ) (Measures in degrees.),
