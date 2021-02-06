@@ -39,7 +39,7 @@ class Proton3DObject {
 
     /**
      * Makes an object into the player. Disclaimer: Needs the imported object + this function to have the parameter noShadows set to true 
-     * @param { object } extras An example (all properties are optional): { type: "firstperson"|"thirdperson", head: Proton.Vector3, invisible: boolean, noShadows: boolean, movementSpeed: number, jumpHeight: number }
+     * @param { object } extras An example (all properties are optional): { type: "firstperson"|"thirdperson"|"birdseye", hidePointer: Boolean (optional), head: Proton.Vector3, invisible: boolean, noShadows: boolean, movementSpeed: number, jumpHeight: number }
      */
     makePlayer( extras ) {
         // ...
@@ -353,6 +353,20 @@ class Proton3DObject {
      * @param { number } value The FOV, somewhere around 1.
      */
     changeFOV( value ) {
+        // ...
+    }
+
+    /**
+     * Enables controls for a third-person camera. You must set camera controls before calling this function. (It'll automatically be called when pointer lock is enabled.)
+     */
+    enable() {
+        // ...
+    }
+
+    /**
+     * Disables controls for a third-person camera. You must set camera controls before calling this function. (It'll automatically be called when pointer lock is disabled.)
+     */
+    disable() {
         // ...
     }
 
