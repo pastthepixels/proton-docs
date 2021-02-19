@@ -7,15 +7,15 @@ Proton3DObject
 .. code-block:: json
 
     {
-        type: "cube"|"sphere"|"perspectivecamera"|"3rdperspectivecamera"|"spotlight"|"sky"|undefined/null (used when importing meshes),
+        type: "cube"|"sphere"|"capsule"|"perspectivecamera"|"3rdperspectivecamera"|"spotlight"|"sky"|undefined/null (used when importing meshes),
         fov: [A number around 1, only for cameras.],
         position: new Proton.Vector3( [Number], [Number], [Number] ),
         rotation: new Proton.Vector3( [Number], [Number], [Number] ) (Measures in degrees.),
         sun: [A Proton3D light which is the "sun" of your sky. Only for skies.],
         width: [A number. Only for cubes.],
-        height: [A number. Only for cubes.],
+        height: [A number. Only for cubes and capsules.],
         depth: [A number. Only for cubes.],
-        radius: [A number. Only for spheres.]
+        radius: [A number. Only for spheres and capsules.]
         castShadow: [A boolean. Only for meshes.]
         invisible: [A boolean. Only for meshes. (Calls object.makeInvisible().)],
         noPhysics: [A boolean. Only for meshes.],
