@@ -110,7 +110,7 @@ class Proton {
 
     /**
      * Initializes the scene. The parameters here are identical to that in [scene].init.
-     * @param { object } extras The main parameters for this function: { postprocessing: { enabled: Boolean, bloom: Boolean, ssao: Boolean, fxaa: Boolean, usePCSS: Boolean, anisotropicFilteringLevel: Number }, sky: Boolean }
+     * @param { object } extras The main parameters for this function: { postprocessing: { enabled: Boolean, bloom: Boolean, backgroundColor: String (hexadecimal color value), ssao: Boolean, fxaa: Boolean, usePCSS: Boolean, anisotropicFilteringLevel: Number }, sky: Boolean }
      */
     init( extras ) {
         // ...
